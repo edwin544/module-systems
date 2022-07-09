@@ -1,8 +1,0 @@
-module def reportServiceAsModule():edwinModules.TReportServiceAsModule
-
-import edwinModules.reportRepoAsModule
-val reportRepo = reportRepoAsModule()
-
-def insertGrade(newName:String,newGrade:String):Unit
-        reportRepo.insertGrade(newName,newGrade)
-def getResult():String = reportRepo.getResult()
