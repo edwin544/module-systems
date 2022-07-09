@@ -1,0 +1,5 @@
+resource type TReportRepoAsModule
+        def set(newValue:Int):Unit
+        def get():Int
+        def insertGrade(newName:String,newGrade:String):Unit
+        def getResult():String
