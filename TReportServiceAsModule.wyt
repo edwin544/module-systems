@@ -1,3 +1,0 @@
-resource type TReportServiceAsModule
-        def insertGrade(newName:String,newGrade:String):Unit
-        def getResult():String
