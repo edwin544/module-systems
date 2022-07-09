@@ -5,7 +5,7 @@ effect ReadReport = {file.Read}
 
 def updateReport(title: String, description: String): {Update} Unit
         val reportAppender = file.makeAppender()
-        reportAppender.write("Report Date: 11 July 2022 3:14 PM\n" + title + "\n" + description + "\n\n")
+        reportAppender.write("Report Date: 11 July 2022 3:14 PM, Title:" + title + ", Description: " + description + "\n\n")
         reportAppender.close()
 def readReport(): String
         val fileReader = file.makeReader()

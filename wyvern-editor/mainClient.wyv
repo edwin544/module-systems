@@ -13,7 +13,7 @@ logger.updateLog("Started executing main client.\n")
 val reportService= reportService(fs, logger)
 reportService.submitReport("Report title", "This my first report!!")
 
-stdout.print("Reading Report\n")
+stdout.print("Printing report:\n")
 stdout.print(reportService.getReport())
 
 

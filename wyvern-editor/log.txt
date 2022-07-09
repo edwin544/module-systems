@@ -90,3 +90,18 @@ Report Service, submitting report.
 Data Access, updating report to file.
 Data Access, report written to file.
 Data Access, reading report from file.
+Started executing main client.
+Report Service, submitting report.
+Data Access, updating report to file.
+Data Access, report written to file.
+Data Access, reading report from file.
+Started executing main client.
+Report Service, submitting report.
+Data Access, updating report to file.
+Data Access, report written to file.
+Data Access, reading report from file.
+Started executing main client.
+Report Service, submitting report.
+Data Access, updating report to file.
+Data Access, report written to file.
+Data Access, reading report from file.
