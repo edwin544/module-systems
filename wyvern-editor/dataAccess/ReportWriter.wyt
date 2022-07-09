@@ -1,0 +1,6 @@
+resource type ReportWriter
+  effect Update
+  effect ReadReport
+
+  def updateReport(title: String, description: String): {this.Update} Unit
+  def readReport():String

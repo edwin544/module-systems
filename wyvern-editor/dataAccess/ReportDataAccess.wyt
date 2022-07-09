@@ -1,0 +1,3 @@
+resource type ReportDataAccess
+        def updateReport(title:String,description:String):Unit
+        def getReport():String

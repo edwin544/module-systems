@@ -1,0 +1,14 @@
+module def reportWriter(file: fileSystem.File): {} dataAccess.ReportWriter
+
+effect Update = {file.Append}
+effect ReadReport = {file.Read}
+
+def updateReport(title: String, description: String): {Update} Unit
+        val reportAppender = file.makeAppender()
+        reportAppender.write("Report Date: 11 July 2022 3:14 PM\n" + title + "\n" + description + "\n\n")
+        reportAppender.close()
+def readReport(): String
+        val fileReader = file.makeReader()
+        val data = fileReader.readFully()
+        fileReader.close()
+        data + "\n"

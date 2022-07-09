@@ -1,0 +1,19 @@
+module def reportDataAccess(fs: fileSystem.FileSystem, logger:Logger): {} dataAccess.ReportDataAccess
+
+import dataAccess.reportWriter
+
+var reportName : String = "report.txt"
+
+def updateReport(title:String,description:String):Unit
+        logger.updateLog("Data Access, updating report to file.\n")
+        val reportFile = fs.fileFor(reportName)
+        val writer = reportWriter(reportFile)
+        writer.updateReport(title, description)
+        logger.updateLog("Data Access, report written to file.\n")
+def getReport():String
+        logger.updateLog("Data Access, reading report from file.\n")
+        val reportFile = fs.fileFor(reportName)
+        val writer = reportWriter(reportFile)
+        writer.readReport()
+
+
