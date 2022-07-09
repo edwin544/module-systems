@@ -11,7 +11,7 @@ val logger = logger(logFile)
 
 logger.updateLog("Started executing main client.\n")
 val reportService= reportService(fs, logger)
-reportService.submitReport("Report title", "This my first report!!")
+reportService.submitReport("Report title", "This is my first report!!")
 
 stdout.print("Printing report:\n")
 stdout.print(reportService.getReport())

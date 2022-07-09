@@ -16,7 +16,7 @@ public class clientMain {
             logger.updateLog("Started executing main client.");
 
             var reportService = new ReportService(logger);
-            reportService.submitReport("Report title", "This my first report!!");
+            reportService.submitReport("Report title", "This is my first report!!");
             System.out.println("Printing report");
             System.out.println(reportService.getReport());
         } catch (IOException e) {
