@@ -1,4 +1,4 @@
-# Module Systems design
+# Module System Designs
 
 ## Wyvern editor
 
