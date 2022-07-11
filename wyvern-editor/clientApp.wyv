@@ -2,7 +2,6 @@ require java
 require stdout
 
 import fileSystem
-import loggerService.logger
 import rptService.reportService
 
 val fs = fileSystem(java)
