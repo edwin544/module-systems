@@ -6,8 +6,7 @@ import logger
 import serviceModule.reportService
 
 val fs = fileSystem(java)
-val logFile = fs.fileFor("log.txt")
-val logger = logger(logFile)
+val logger = logger(fs)
 
 logger.updateLog("Started executing main client.\n")
 val reportService= reportService(fs, logger)
