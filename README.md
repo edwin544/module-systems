@@ -1,4 +1,4 @@
-# Module Systems: Comparing module systems design security
+# Module Systems design
 
 ## Wyvern editor
 
