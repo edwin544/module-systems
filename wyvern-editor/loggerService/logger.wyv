@@ -1,0 +1,8 @@
+module def logger(fs: fileSystem.FileSystem): {} loggerService.Logger
+
+import fileAccess.fileIO
+
+def updateLog(msg: String):Unit
+    val logFile = fs.fileFor("log.txt")
+    val fileWriter = fileIO(logFile)
+    fileWriter.updateFile(msg)

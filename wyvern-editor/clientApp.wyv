@@ -2,14 +2,11 @@ require java
 require stdout
 
 import fileSystem
-import logger
-import serviceModule.reportService
+import loggerService.logger
+import rptService.reportService
 
 val fs = fileSystem(java)
-val logger = logger(fs)
-
-logger.updateLog("Started executing main client.\n")
-val reportService= reportService(fs, logger)
+val reportService= reportService(fs)
 reportService.submitReport("Report title", "This is my first report!!")
 
 stdout.print("Printing report:\n")

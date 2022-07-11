@@ -1,4 +1,0 @@
-resource type ReportWriter
-
-    def updateReport(data: String): Unit
-    def readReport():String

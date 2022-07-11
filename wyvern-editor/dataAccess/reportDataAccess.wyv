@@ -1,17 +1,21 @@
-module def reportDataAccess(fs: fileSystem.FileSystem, logger:Logger): {} dataAccess.ReportDataAccess
+module def reportDataAccess(fs: fileSystem.FileSystem, logger: loggerService.Logger): {} dataAccess.ReportDataAccess
 
-import dataAccess.reportWriter
+import fileAccess.fileIO
+
+val reportName: String = "report.txt"
 
 def updateReport(title:String,description:String):Unit
-        logger.updateLog("Data Access, updating report to file.\n")
-        val writer = reportWriter(fs)
+        logger.updateLog("Data Access log, updating report to file.\n")
+        val logFile = fs.fileFor(reportName)
+        val fileWriter = fileIO(logFile)
         val reportData = "Report Date: 11 July 2022 3:14 PM, Title:" + title + ", Description: " + description + "\n\n"
-        writer.updateReport(reportData)
-        logger.updateLog("Data Access, report written to file.\n")
+        fileWriter.updateFile(reportData)
+        logger.updateLog("Data Access log, report written to file.\n")
 
 def getReport():String
-        logger.updateLog("Data Access, reading report from file.\n")
-        val writer = reportWriter(fs)
-        writer.readReport()
+        logger.updateLog("Data Access log, reading report from file.\n")
+        val logFile = fs.fileFor(reportName)
+        val reader = fileIO(logFile)
+        reader.readFile()
 
 

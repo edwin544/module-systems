@@ -1,23 +1,18 @@
 package jigsaw.loggerService;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.BufferedWriter;
+import java.io.*;
+import jigsaw.fileAccess.FileIO;
 
 public class Logger {
 
-    private String _reportName;
+    private String _reportName = "log.txt";
 
-    public Logger(String  reportName){
-        _reportName = reportName;
+    public Logger() {
     }
 
     public void updateLog(String msg) throws IOException {
-        FileWriter fw = new FileWriter(_reportName, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(msg);
-        bw.newLine();
-        bw.close();
+        File file = new File(_reportName);
+        var fileIO = new FileIO(file);
+        fileIO.updateFile(msg);
     }
-
 }

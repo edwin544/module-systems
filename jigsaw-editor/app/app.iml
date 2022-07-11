@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="rptService" />
     <orderEntry type="module" module-name="loggerService" />
-    <orderEntry type="module" module-name="fileAccess" />
   </component>
 </module>

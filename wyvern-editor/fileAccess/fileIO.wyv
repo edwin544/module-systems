@@ -1,0 +1,12 @@
+module def fileIO(file: fileSystem.File): {} fileAccess.FileIO
+
+def updateFile(data: String): Unit
+        val fileAppender = file.makeAppender()
+        fileAppender.write(data)
+        fileAppender.close()
+
+def readFile(): String
+        val fileReader = file.makeReader()
+        val data = fileReader.readFully()
+        fileReader.close()
+        data + "\n"
