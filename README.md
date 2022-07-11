@@ -5,7 +5,7 @@
 Follow the steps below in order to run wyvern-editor locally.
 1. Clone module-systems onto your local machine
 
-2. Install prequisites for Wyvern tool
+2. Install prequisites for Wyvern editor
     - Java 18 (or higher)
     - ant 1.9.0 (or higher)
     - Python 3 
@@ -26,7 +26,7 @@ Follow the steps below in order to run wyvern-editor locally.
 Follow the steps below in order to run wyvern-editor locally.
 1. Clone module-systems onto your local machine
 
-3.  Install prequisites for Wyvern tool
+3.  Install prequisites for Jigsaw editor
     - Java 18 (or higher)
     - Download IntelliJ IDEA (https://www.jetbrains.com/idea/download)
     
