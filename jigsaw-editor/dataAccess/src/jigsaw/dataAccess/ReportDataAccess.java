@@ -1,7 +1,9 @@
 package jigsaw.dataAccess;
 
 import jigsaw.loggerService.Logger;
-import java.io.*;
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 
 public class ReportDataAccess {
     private String reportName = "report.txt";

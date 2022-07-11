@@ -3,11 +3,9 @@ package jigsaw.web;
 import jigsaw.serviceModule.ReportService;
 import jigsaw.loggerService.Logger;
 
-
-import java.io.FileWriter;
 import java.io.IOException;
 
-public class clientMain {
+public class clientApp {
     public static void main (String[] args) throws IOException {
 
 
