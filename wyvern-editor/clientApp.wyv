@@ -3,9 +3,12 @@ require stdout
 
 import fileSystem
 import rptService.reportService
+import loggerService.logger
 
 val fs = fileSystem(java)
-val reportService= reportService(fs)
+val logger = logger(fs)
+val reportService= reportService(fs, logger)
+
 reportService.submitReport("Report title", "This is my first report!!")
 
 stdout.print("Printing report:\n")

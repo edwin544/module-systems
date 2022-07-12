@@ -1,9 +1,7 @@
-module def reportService(fs: fileSystem.FileSystem): {} rptService.ReportService
+module def reportService(fs: fileSystem.FileSystem, logger: loggerService.NetworkLogger): {} rptService.ReportService
 
 import dataAccess.reportDataAccess
-import loggerService.logger
 
-val logger = logger(fs)
 val reportDataAccess= reportDataAccess(fs,logger)
 
 def submitReport(title:String,description:String):Unit

@@ -1,0 +1,8 @@
+module def networkLogger(fs: fileSystem.FileSystem): {} loggerService.NetworkLogger
+
+import fileAccess.networkIO
+
+def updateLog(msg: String):Unit
+    val logFile = fs.fileFor("network-log.txt")
+    val fileWriter = networkIO(logFile)
+    fileWriter.updateFile(msg)

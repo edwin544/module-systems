@@ -1,0 +1,4 @@
+resource type NetworkIO
+
+    def updateFile(data: String): Unit
+    def readFile():String

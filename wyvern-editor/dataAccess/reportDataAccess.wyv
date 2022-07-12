@@ -1,4 +1,4 @@
-module def reportDataAccess(fs: fileSystem.FileSystem, logger: loggerService.Logger): {} dataAccess.ReportDataAccess
+module def reportDataAccess(fs: fileSystem.FileSystem, logger: loggerService.NetworkLogger): {} dataAccess.ReportDataAccess
 
 import fileAccess.fileIO
 

@@ -3,11 +3,12 @@ package jigsaw.loggerService;
 import java.io.*;
 import jigsaw.fileAccess.FileIO;
 
-public class Logger {
+public class NetworkLogger {
 
-    private String _logName = "log.txt";
+    private String _logName = "network-log.txt";
 
-    public Logger() {
+    public NetworkLogger() {
+
     }
 
     public void updateLog(String msg) throws IOException {
