@@ -1,4 +1,4 @@
-# Module Systems: Comparing module systems design security
+# Module System Designs
 
 ## Wyvern editor
 
@@ -18,6 +18,9 @@ Follow the steps below in order to run wyvern-editor locally.
 5. Execute command: wyvern/bin/wyvern clientApp.wyv
 
 7. Results will be displayed on you screen
+
+### Wyvern editor module diagram
+![wyvern editor module diagram](https://github.com/edwin544/module-systems/blob/main/wyvern-editor/wyvern-module-diagram.png)
 
 
 
