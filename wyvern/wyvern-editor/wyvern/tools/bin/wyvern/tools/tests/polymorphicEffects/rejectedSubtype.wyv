@@ -1,0 +1,8 @@
+type Generic
+  effect E
+
+// {system.FFI} is NOT a subtype of {}, so NOT OK
+val u : Generic[{}] = new
+  effect E = {system.FFI}
+
+"abc"

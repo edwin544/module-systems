@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c49ded6-d441-4b48-b330-53d6613be9b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/app/app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/app/src/jigsaw/in/app.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/app/src/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/jigsaw-interface-editor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/reportService/reportService.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/reportService/src/jigsaw/service/IReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/reportService/src/jigsaw/service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jigsaw-interface-editor/reportService/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/app/app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/app/src/jigsaw/app/clientApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/app/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/dataAccess/dataAccess.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/dataAccess/src/jigsaw/dataAccess/ReportDataAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/dataAccess/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/fileAccess/fileAccess.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/fileAccess/src/jigsaw/fileAccess/FileIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/fileAccess/src/jigsaw/fileAccess/NetworkIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/fileAccess/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/jigsaw-editor.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/jiwsaw-editor module dependency diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/loggerService/loggerService.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/loggerService/src/jigsaw/loggerService/Logger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/loggerService/src/jigsaw/loggerService/NetworkLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/loggerService/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/app/jigsaw/app/clientApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/app/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/dataAccess/jigsaw/dataAccess/ReportDataAccess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/dataAccess/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/fileAccess/jigsaw/fileAccess/FileIO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/fileAccess/jigsaw/fileAccess/NetworkIO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/fileAccess/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/loggerService/jigsaw/loggerService/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/loggerService/jigsaw/loggerService/NetworkLogger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/loggerService/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/rptService/jigsaw/rptService/ReportService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/out/production/rptService/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/rptService/rptService.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/rptService/src/jigsaw/rptService/ReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jigsaw-editor/rptService/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/clientApp.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/dataAccess/ReportDataAccess.wyt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/dataAccess/reportDataAccess.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/fileAccess/FileIO.wyt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/fileAccess/NetworkIO.wyt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/fileAccess/fileIO.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/fileAccess/networkIO.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/loggerService/Logger.wyt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/loggerService/NetworkLogger.wyt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/loggerService/logger.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/loggerService/networkLogger.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/network-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/rptService/ReportService.wyt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/rptService/reportService.wyv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/wyvern" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wyvern-editor/wyvern-module-diagram.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CglOQqux2PlelAJWuSEEzg8Fox" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/edwin/MyDrive/PhD/projects/module-systems"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c49ded6-d441-4b48-b330-53d6613be9b6" name="Changes" comment="" />
+      <created>1659232075277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659232075277</updated>
+    </task>
+    <servers />
+  </component>
+</project>

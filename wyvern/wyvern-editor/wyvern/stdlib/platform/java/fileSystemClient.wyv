@@ -1,0 +1,5 @@
+module def fileSystemClient(fileSys: fileSystem.FileSystem): {system.FFI}
+
+def make(): String
+    fileSys.fileFor("~/file")
+    "abc"

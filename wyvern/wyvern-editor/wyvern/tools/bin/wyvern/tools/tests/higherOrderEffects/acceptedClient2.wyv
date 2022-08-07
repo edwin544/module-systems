@@ -1,0 +1,11 @@
+import higherOrderEffects.AcceptedFile2
+import lifted higherOrderEffects.acceptedLib2
+
+val file : AcceptedFile2[{system.FFI}] = new
+    effect write = {system.FFI}
+    def go() : {} (Unit -> {this.write} Unit)
+        () => unit
+
+val lib = acceptedLib2[{file.write}](file)
+
+"abc"

@@ -1,0 +1,19 @@
+module def String(python : Python)
+
+def equals(str1:String,str2:String):Boolean
+	python.isEqual(str1,str2)
+
+def ofInt(x : Int) : String
+  python.toString(x)
+
+def ofBoolean(b : Boolean) : String
+  python.toString(b)
+
+def ofFloat(f : Float) : String
+  python.toString(f)
+
+def ofCharacter(c : Character) : String
+  python.toString(c)
+  
+def ofASCII(i : Int) : String
+  python.chr(i)

@@ -1,0 +1,14 @@
+//This shows that the import2 rule is implemented
+import polymorphicEffects.File
+import lifted polymorphicEffects.lib
+
+val file : File[{system.FFI}] = new
+    effect write = {system.FFI}
+    def writeToFile() : {this.write} Unit
+        unit
+
+val lib = lib[{}](file)
+
+
+
+

@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<project name="wyvern" default="copper-generate" basedir=".">
+    <property name="build.dir" value="build/" />
+    <property name="src.dir" value="src" />
+
+    <path id="classpath.base">
+        <pathelement location="lib/junit-4.11.jar" />
+        <pathelement location="lib/asm-debug-all-5.0.1.jar" />
+        <pathelement location="lib/CopperCompiler.jar" />
+        <pathelement location="lib/CopperRuntime.jar" />
+        <pathelement location="lib/hamcrest-core-1.3.jar" />
+        <pathelement location="lib/javatuples-1.2.jar" />
+        <pathelement location="lib/checkstyle-8.7-all.jar" />
+        <pathelement location="lib/jacocoant.jar" />
+        <pathelement location="lib/protobuf-java-3.5.1.jar" />
+    </path>
+
+    <taskdef name="copper" classname="edu.umn.cs.melt.copper.ant.CopperAntTask" classpath="lib/CopperCompiler.jar"/>
+
+    <target name="copper-compose-compile">
+        <mkdir dir="copper-composer/bin"/>
+        <javac destdir="copper-composer/bin" srcdir="copper-composer/src">
+            <classpath path="lib/CopperCompiler.jar:lib/ant.jar"/>
+        </javac>
+    </target>
+
+    <target name="lexer">
+        <copper outputfile="src/wyvern/tools/lexing/WyvernLexer.java" packagename="wyvern.tools.lexing">
+            <inputs file="src/wyvern/tools/lexing/WyvernLexer.x"/>
+        </copper>
+    </target>
+
+    <target name="javacc-parser" depends="lexer">
+        <javacc
+            target="src/wyvern/tools/parsing/coreparser/WyvernParser.jj"
+            outputdirectory="src/wyvern/tools/parsing/coreparser/"
+            javacchome="lib/"
+        />
+    </target>
+
+    <target name="copper-generate" depends="lexer,javacc-parser">
+    </target>
+
+    <target name="copper-debug">
+        <copper outputfile="src/wyvern/tools/parsing/Wyvern.java" dump="ON" dumpfile="copper-output.txt" packagename="wyvern.tools.parsing">
+            <inputs file="src/wyvern/tools/parsing/Wyvern.x"/>
+        </copper>
+        <copper outputfile="src/wyvern/tools/tests/utils/TestSuiteParser.java" dump="ON" dumpfile="copper-tests-output.txt">
+            <inputs file="src/wyvern/tools/tests/utils/Testsuite.x"/>
+        </copper>
+    </target>
+
+    <target name="arch-lexers">
+        <copper outputfile="src/wyvern/tools/arch/lexing/ArchLexer.java" packagename="wyvern.tools.arch.lexing">
+            <inputs file="src/wyvern/tools/arch/lexing/ArchLexer.x" />
+        </copper>
+
+        <copper outputfile="src/wyvern/tools/arch/lexing/DeploymentViewLexer.java" packagename="wyvern.tools.arch.lexing">
+            <inputs file="src/wyvern/tools/arch/lexing/DeploymentViewLexer.x" />
+        </copper>
+    </target>
+
+    <target name="arch-parsers" depends="arch-lexers, arch-asts">
+        <javacc
+            target="src/wyvern/tools/parsing/coreparser/arch/ArchParser.jj"
+            outputdirectory="src/wyvern/tools/parsing/coreparser/arch/"
+            javacchome="lib/"
+        />
+
+        <javacc
+            target="src/wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParser.jj"
+            outputdirectory="src/wyvern/tools/parsing/coreparser/arch/views/deployment/"
+            javacchome="lib/"
+        />
+    </target>
+    
+    <target name="arch-asts">
+        <jjtree
+            target="src/wyvern/tools/parsing/coreparser/arch/ArchParser.jjt"
+            outputdirectory="src/wyvern/tools/parsing/coreparser/arch/"
+            javacchome="lib/"
+        />
+
+        <jjtree
+            target="src/wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParser.jjt"
+            outputdirectory="src/wyvern/tools/parsing/coreparser/arch/views/deployment/"
+            javacchome="lib/"
+        />
+    </target>
+
+    <target name="build" depends="clean,copper-generate,arch-parsers">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" debug="true">
+            <compilerarg value="-Xlint:deprecation"/>
+            <compilerarg line="-Xmaxerrs 950" />
+            <classpath refid="classpath.base"/>
+        </javac>
+    </target>
+
+    <target name="test" depends="build, lint">
+        <property environment="env"/>
+        <fail message="WYVERN_HOME environment variable is set but points at a folder that does not look like valid Wyvern folder.">
+            <condition>
+                <and>
+                    <isset property="env.WYVERN_HOME"/>
+                    <not>
+                        <available file="${env.WYVERN_HOME}/stdlib" type="dir"/>
+                    </not>
+                </and>
+            </condition>
+        </fail>
+        <junit printsummary="on" haltonfailure="yes" fork="yes">
+            <classpath>
+                <path refid="classpath.base" />
+                <pathelement location="${build.dir}"/>
+            </classpath>
+            <formatter type="brief" usefile="false" />
+            <batchtest>
+                <fileset dir="${src.dir}" includes="**/AntRegressionTestSuite.java" />
+            </batchtest>
+        </junit>
+    </target>
+
+    <fileset id="src.files" dir="${src.dir}" includes="**/*.java" />
+
+    <fileset id="generated.files" dir="${src.dir}">
+        <include name="wyvern/tools/lexing/WyvernLexer.java" />
+        <include name="wyvern/tools/arch/lexing/ArchLexer.java" />
+        <include name="wyvern/tools/arch/lexing/DeploymentViewLexer.java" />
+        <include name="wyvern/tools/parsing/coreparser/Token.java" />
+        <include name="wyvern/tools/parsing/coreparser/TokenManager.java" />
+        <include name="wyvern/tools/parsing/coreparser/TokenMgrError.java" />
+        <include name="wyvern/tools/parsing/coreparser/WyvernParser.java" />
+        <include name="wyvern/tools/parsing/coreparser/WyvernParserConstants.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/TokenMgrError.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/Token.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/Node.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/ArchParserTreeConstants.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/TokenManager.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/ParseException.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/ArchParser.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/ArchParser.jj" />
+        <include name="wyvern/tools/parsing/coreparser/arch/JJTArchParserState.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/ArchParserConstants.java" />    
+        <include name="wyvern/tools/parsing/coreparser/arch/ArchParserVisitor.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/ArchParserDefaultVisitor.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParser.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParserConstants.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParserTreeConstants.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/JJTDeploymentViewParserState.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/Node.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/ParseException.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/SimpleNode.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/Token.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/TokenManager.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/TokenMgrError.java" />
+        <include name="wyvern/tools/arch/lexing/DeploymentViewLexer.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParser.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParser.jj" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParserConstants.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/DeploymentViewParserTreeConstants.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/JJTDeploymentViewParserState.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/Node.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/ParseException.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/SimpleNode.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/Token.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/TokenManager.java" />
+        <include name="wyvern/tools/parsing/coreparser/arch/views/deployment/TokenMgrError.java" />
+    </fileset>
+
+    <target name="clean-generated" description="Delete files generated by the lexers and the parsers">
+        <delete>
+            <fileset refid="generated.files" />
+        </delete>
+    </target>
+
+    <target name="clean" description="clean up" depends="clean-generated">
+        <!-- Delete the ${build.dir} directory tree -->
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="lint">
+        <checkstyle config="checkstyle.xml" maxWarnings="0">
+            <path>
+                <difference>
+                    <fileset refid="src.files" />
+                    <fileset refid="generated.files" />
+                </difference>
+            </path>
+        </checkstyle>
+    </target>
+
+    <taskdef 
+        resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties"
+        classpathref="classpath.base"
+    />
+
+    <target name="coverage">
+        <coverage>
+            <junit printsummary="on" haltonfailure="yes" fork="yes">
+                <classpath>
+                    <path refid="classpath.base" />
+                    <pathelement location="${build.dir}"/>
+                </classpath>
+                <formatter type="brief" usefile="false" />
+                <batchtest>
+                    <fileset dir="${src.dir}" includes="**/AntRegressionTestSuite.java" />
+                </batchtest>
+            </junit>
+        </coverage>
+        <report>
+            <executiondata>
+                <file file="jacoco.exec"/>
+            </executiondata>
+
+            <structure name="Wyvern">
+                <classfiles>
+                    <fileset dir="${build.dir}"/>
+                </classfiles>
+                <sourcefiles encoding="UTF-8">
+                    <fileset dir="${src.dir}"/>
+                </sourcefiles>
+            </structure>
+            <html destdir="report"/>
+        </report>
+    </target>
+
+    <taskdef 
+        resource="org/jacoco/ant/antlib.xml"
+        classpathref="classpath.base"
+    />
+</project>

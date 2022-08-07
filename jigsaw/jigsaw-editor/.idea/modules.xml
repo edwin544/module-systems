@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/appModule/appModule.iml" filepath="$PROJECT_DIR$/appModule/appModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fileAccessModule/fileAccessModule.iml" filepath="$PROJECT_DIR$/fileAccessModule/fileAccessModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-editor.iml" filepath="$PROJECT_DIR$/jigsaw-editor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loggerModule/loggerModule.iml" filepath="$PROJECT_DIR$/loggerModule/loggerModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serviceModule/serviceModule.iml" filepath="$PROJECT_DIR$/serviceModule/serviceModule.iml" />
+    </modules>
+  </component>
+</project>

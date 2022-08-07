@@ -1,0 +1,12 @@
+module Int
+
+import java:wyvern.stdlib.support.Int.utils
+
+def from(str:String):Int
+	utils.from(str)
+
+def maxValue():Int
+    utils.maxValue()
+
+def minValue():Int
+    utils.minValue()

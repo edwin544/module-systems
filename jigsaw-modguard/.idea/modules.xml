@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-modguard.iml" filepath="$PROJECT_DIR$/jigsaw-modguard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my.main/my.main.iml" filepath="$PROJECT_DIR$/my.main/my.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my.mod/my.mod.iml" filepath="$PROJECT_DIR$/my.mod/my.mod.iml" />
+    </modules>
+  </component>
+</project>

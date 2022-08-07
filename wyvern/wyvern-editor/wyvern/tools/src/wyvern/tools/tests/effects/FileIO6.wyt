@@ -1,0 +1,3 @@
+resource type FileIO6
+    def read(): {system.FFI} Int
+    def write(x: Int): {system.FFI} Int

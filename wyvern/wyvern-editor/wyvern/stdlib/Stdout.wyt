@@ -1,0 +1,14 @@
+//import lifted formatstring
+
+resource type Stdout
+    effect print
+    effect flush
+    type Printable
+    def print(text : String) : {this.print} Unit
+    def printInt(n : Int) : {this.print} Unit
+    def printBoolean(b : Boolean) : {this.print} Unit
+    def println() : {this.print} Unit
+    def flush() : {this.flush} Unit
+    def printFloat(f : Float) : {this.print} Unit
+    //def printf(str : formatstring.FormatString) : {this.print} Unit
+    def printRational(r : Rational) : {this.print} Unit

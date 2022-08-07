@@ -1,0 +1,3 @@
+module fileIOEffects
+effect readF = {system.FFI}
+effect writeF = {system.FFI}

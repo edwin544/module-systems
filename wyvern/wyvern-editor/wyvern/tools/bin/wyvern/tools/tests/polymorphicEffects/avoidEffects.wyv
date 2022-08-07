@@ -1,0 +1,11 @@
+def id[effect F, T](x : T) : {F} T
+  x
+
+// Cannot reference new effects defined within method (no "hidden" effects)
+// Related to the "avoidance problem"
+def run() : {system.FFI} String
+  val v = new
+    effect hiddenEffect = {system.FFI}
+  id[{v.hiddenEffect}, String]("abc")
+
+run()

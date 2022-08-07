@@ -1,0 +1,21 @@
+//This is translation for Fig.13 in the paper
+import polymorphicEffects.File
+import polymorphicEffects.Go
+import lifted polymorphicEffects.import3Lib
+
+type UnitFnWithoutEffect
+    def app() : {} Unit
+
+val g : Go [{system.FFI}] = new
+    // x should be a function without effect
+    def go (x : Unit -> {} Unit) : {} Unit
+        x()
+
+val file1 : File[{system.FFI}] = new
+    effect write = {system.FFI}
+    def writeToFile() : {this.write} Unit
+        unit
+
+val lib1 = import3Lib[{}](file1, g)
+
+"abc"

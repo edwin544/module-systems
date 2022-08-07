@@ -1,0 +1,25 @@
+type Generic
+  effect E
+
+val q : Generic[{system.FFI}] = new
+  effect E = {system.FFI}
+
+val r : Generic[{system.FFI}] = new
+  effect E = {}
+
+val s : Generic[{}] = new
+  effect E = {}
+
+val t : Generic = new
+  effect E = {}
+
+def id[effect E, T](x : T) : {E} T
+  x
+
+// {r.E} is actually {}, but is declared to be {system.FFI}, so the effect
+// checker will reject passing in {r.E} here because {system.FFI} is not a
+// subset of {s.E} = {}
+def run() : {s.E} String
+  id[{r.E}]("abc")
+
+run()

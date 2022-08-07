@@ -1,0 +1,8 @@
+module networkEffects : {}
+effect Read = {system.FFI}
+effect Write = {system.FFI}
+
+// for opening socket connections
+effect Connect = {Read}
+effect Close = {system.FFI}
+
