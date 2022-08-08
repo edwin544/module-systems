@@ -2,3 +2,32 @@ Report Service log, submitting report.
 Data Access log, updating report to file.
 Data Access log, report written to file.
 Data Access log, reading report from file.
+Report Service log, submitting report.
+Data Access log, updating report to file.
+Data Access log, report written to file.
+Data Access log, reading report from file.
+Report Service log, submitting report.
+Data Access log, updating report to file.
+Data Access log, report written to file.
+Data Access log, reading report from file.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Report Service log, submitting report.
+Data Access log, updating report to file.
+Data Access log, report written to file.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Report Service log, submitting report.
+Data Access log, updating report to file.
+Data Access log, report written to file.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Data Access log, reading report from file.
+Not allowed Report Service log, submitting report.
+Data Access log, reading report from file.

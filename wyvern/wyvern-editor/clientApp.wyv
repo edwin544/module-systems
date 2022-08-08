@@ -9,7 +9,9 @@ val fs = fileSystem(java)
 val logger = logger(fs)
 val reportService= reportService(fs, logger)
 
-reportService.submitReport("Report title", "This is my first report!!")
+logger.updateLog("Not allowed Report Service log, submitting report.\n")
+
+//reportService.submitReport("Report title", "This is my first report!!")
 
 stdout.print("Printing report:\n")
 stdout.print(reportService.getReport())

@@ -10,7 +10,7 @@ public class NetworkIO {
     }
 
     public void updateFile(String data) throws IOException {
-        FileWriter fw = new FileWriter(_file, true);
+        FileWriter fw = new FileWriter(_file);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(data);
         bw.newLine();

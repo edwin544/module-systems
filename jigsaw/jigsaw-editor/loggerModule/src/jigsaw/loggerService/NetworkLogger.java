@@ -1,25 +1,25 @@
 package jigsaw.loggerService;
 
-import java.io.*;
-import jigsaw.fileAccess.FileIO;
+import jigsaw.fileAccess.NetworkIO;
 
-public class NetworkLogger extends IOLogger implements ILogger {
+import java.io.File;
+import java.io.IOException;
 
-    private String _networkFileName;
+public class NetworkLogger extends CommonLogger implements ILogger {
 
     public NetworkLogger(String networkFileName) {
-        _networkFileName = networkFileName;
+        super(networkFileName);
     }
 
     public void updateLog(String msg) throws IOException {
-        File file = new File(_networkFileName);
-        var fileIO = new FileIO(file);
-        fileIO.updateFile(msg);
+        File file = new File(_logFileName);
+        var networkIO = new NetworkIO(file);
+        networkIO.updateFile("Network: " + msg);
     }
 
     public String getLogs() throws IOException {
-        File file = new File(_networkFileName);
-        var fileIO = new FileIO(file);
-        return fileIO.readFile();
+        File file = new File(_logFileName);
+        var networkIO = new NetworkIO(file);
+        return networkIO.readFile();
     }
 }

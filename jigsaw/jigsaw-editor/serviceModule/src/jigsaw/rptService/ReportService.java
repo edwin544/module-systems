@@ -1,23 +1,18 @@
 package jigsaw.rptService;
 
-import jigsaw.loggerService.IOLogger;
-
-
+import jigsaw.loggerService.ILogger;
+import jigsaw.loggerService.NetworkLogger;
 import java.io.IOException;
 
 public class ReportService {
-    private IOLogger _logger;
+    private NetworkLogger _logger;
 
-    public ReportService(IOLogger logger) {
-        _logger =  logger;
-        var data = _logger.getLogs();
-        System.out.println(data);
+    public ReportService(ILogger logger) {
+        _logger =  (NetworkLogger) logger;
     }
 
-    public void submitReport(String title, String description) throws IOException {
-        _logger.updateLog1("Report Service, submitting report.");
-        //_logger.getLogs();
+    public void submitLogReport(String title, String description) throws IOException {
+        _logger.updateLog(title + ", " + description);
     }
-
 
 }
