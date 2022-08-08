@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-package-conflict/app/app.iml" filepath="$PROJECT_DIR$/jigsaw-package-conflict/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-editor/appModule/appModule.iml" filepath="$PROJECT_DIR$/jigsaw-editor/appModule/appModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-editor/fileAccessModule/fileAccessModule.iml" filepath="$PROJECT_DIR$/jigsaw-editor/fileAccessModule/fileAccessModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-interface/identityModule/identityModule.iml" filepath="$PROJECT_DIR$/java-interface/identityModule/identityModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jigsaw.iml" filepath="$PROJECT_DIR$/.idea/jigsaw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-editor/loggerModule/loggerModule.iml" filepath="$PROJECT_DIR$/jigsaw-editor/loggerModule/loggerModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-interface/mainModule/mainModule.iml" filepath="$PROJECT_DIR$/java-interface/mainModule/mainModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-modguard/my.main/my.main.iml" filepath="$PROJECT_DIR$/jigsaw-modguard/my.main/my.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-modguard/my.mod/my.mod.iml" filepath="$PROJECT_DIR$/jigsaw-modguard/my.mod/my.mod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-package-conflict/serviceA/serviceA.iml" filepath="$PROJECT_DIR$/jigsaw-package-conflict/serviceA/serviceA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-package-conflict/serviceB/serviceB.iml" filepath="$PROJECT_DIR$/jigsaw-package-conflict/serviceB/serviceB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jigsaw-editor/serviceModule/serviceModule.iml" filepath="$PROJECT_DIR$/jigsaw-editor/serviceModule/serviceModule.iml" />
+    </modules>
+  </component>
+</project>
