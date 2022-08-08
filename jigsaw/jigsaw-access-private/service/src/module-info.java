@@ -1,5 +1,4 @@
 module service {
-    requires identityMod;
+    requires identity;
     exports service.greet;
-    //opens identityMod;
 }

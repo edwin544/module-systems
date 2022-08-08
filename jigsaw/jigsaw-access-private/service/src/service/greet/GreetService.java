@@ -14,7 +14,7 @@ public class GreetService {
         var greetMessage = person.sayHello(name);
 
         //able to access private method getPassword() of Person class of the identity module
-        //by setting opens identity in the module-info.java file
+        //by setting the package identity.api as open in the identity module-info.java file
         Method privateMethod = Person.class.getDeclaredMethod("getPassword");
         privateMethod.setAccessible(true);
         var password = (byte[])privateMethod.invoke(person);
