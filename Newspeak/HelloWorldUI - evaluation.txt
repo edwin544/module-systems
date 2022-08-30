@@ -1,0 +1,1 @@
+((HelloWorldUI usingPlatform: platform) HelloWorldSubject onModel: nil)}

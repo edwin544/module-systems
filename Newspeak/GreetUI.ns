@@ -1,0 +1,36 @@
+Newspeak3
+'Root'
+class GreetUI usingPlatform: p  = (
+	|
+	private Subject = p hopscotch Subject.
+	private Presenter = p hopscotch Presenter.
+	|
+) (
+class GreetPresenter onSubject: s <GreetSubject> = Presenter  onSubject: s(
+) (
+public isKindOfCounterPresenter = (
+  ^true
+)
+isMyKind: other = (
+  ^other isKindOfCounterPresenter
+)
+definition = (
+  ^label: 'Good morning, Edwin!'.
+)
+) : (
+)
+public class GreetSubject onModel: m <Counter> =  Subject onModel: m(
+) (
+createPresenter ^ <GreetPresenter> = (
+  ^GreetPresenter onSubject: self
+)
+public isKindOfCounterSubject = (
+  ^true
+)
+isMyKind: other = (
+  ^other isKindOfCounterSubject
+)
+) : (
+)
+) : (
+)

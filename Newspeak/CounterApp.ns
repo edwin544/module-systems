@@ -1,0 +1,15 @@
+Newspeak3
+'Root'
+class CounterApp packageUsing: manifest = (
+	|
+    private CounterUI = manifest CounterUI.
+	|
+) (
+public main: platform args: args = (
+     | 
+     ui = CounterUI usingPlatform: platform initialVal: 2.
+     |
+     platform hopscotch HopscotchWindow openSubject: (ui CounterSubject onModel: ui Counter new).
+)
+) : (
+)

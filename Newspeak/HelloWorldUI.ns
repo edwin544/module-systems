@@ -1,0 +1,34 @@
+Newspeak3
+'Root'
+class HelloWorldUI usingPlatform: platform = (
+	|
+	private Presenter = platform hopscotch Presenter.
+	private Subject = platform hopscotch Subject.
+	|
+) (
+public class HelloWorldSubject onModel: m = Subject onModel: m () (
+) : (
+public createPresenter ^ <HelloWorldPresenter> = (
+	^HelloWorldPresenter onSubject: self
+)
+public isKindOfCounterSubject = (
+  ^true
+)
+isMyKind: other = (
+  ^other isKindOfCounterSubject
+)
+)
+class HelloWorldPresenter onSubject: s <HelloWorldSubject> = Presenter onSubject: s () (
+) : (
+public definition ^ <Fragment> = (
+	^label: 'Hello World!'.
+)
+public isKindOfCounterPresenter = (
+  ^true
+)
+isMyKind: other = (
+  ^other isKindOfCounterPresenter
+)
+)
+) : (
+)

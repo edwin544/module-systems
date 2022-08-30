@@ -1,0 +1,16 @@
+Newspeak3
+'Root'
+class FileExplorerApp packageUsing: manifest = (
+	|
+    private FileExplorerUI = manifest FileExplorerUI.
+	|
+) (
+public main: platform args: args = (
+     | 
+     ui = FileExplorerUI usingPlatform: platform.
+     | 
+     platform hopscotch HopscotchWindow openSubject: (ui FileExplorerSubject onModel: '~Users').
+     
+)
+) : (
+)

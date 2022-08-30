@@ -1,0 +1,16 @@
+Newspeak3
+'Root'
+class HelloWorldApp packageUsing: manifest = (
+	|
+    private HelloWorldUI = manifest HelloWorldUI.
+	|
+) (
+public main: platform args: args = (
+     | 
+     ui = HelloWorldUI usingPlatform: platform.
+     |
+     platform hopscotch HopscotchWindow openSubject: (ui HelloWorldSubject onModel: nil).
+     
+)
+) : (
+)

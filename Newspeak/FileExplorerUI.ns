@@ -1,0 +1,66 @@
+Newspeak3
+'Root'
+class FileExplorerUI usingPlatform: platform = (
+	|
+	private Presenter = platform hopscotch Presenter.
+	private Subject = platform hopscotch Subject.
+     	private List = platform collections List.
+    	private FilePath = platform files FilePath.
+	|
+) (
+public class FileExplorerSubject onModel: m = Subject onModel: m () (
+public createPresenter ^ <FileExplorerPresenter> = (
+	^FileExplorerPresenter onSubject: self
+)
+public isDirectory  = (
+	^(FilePath for: fullFilePath) isDirectory
+)
+public fullFilePath ^ <String> = (
+		^model
+)
+public localFileName ^ <String> = (
+ 	(* Answer only the file name portion of the path name *)
+	^(FilePath for: fullFilePath) simpleName
+)
+public contents ^ <Collection[FileExplorerSubject]> = (
+(* Answer a collection of subjects on the receiver elements *)
+^isDirectory 
+	ifTrue:
+    [ | thisDirectory | 
+    thisDirectory: (FilePath for: fullFilePath).
+    thisDirectory entries collect: 
+    [:each | FileExplorerSubject onModel: each name]
+    ]
+    ifFalse: [List new]
+)
+public definition ^ <Fragment> = (
+	^subject isDirectory
+	 ifTrue: [directoryPresentation]
+	ifFalse: [label: subject localFileName]
+)
+directoryPresentation ^ <Fragment> = (
+	^heading: (label: subject localFileName)
+	details: [column: directoryContentsPresenters]
+)
+directoryContentsPresenters ^ <Collection[Presenter]> = (
+	^subject contents collect: [:each | each presenter]
+)
+) : (
+)
+class FileExplorerPresenter onSubject: s <FileExplorerSubject> = Presenter onSubject: s () (
+filePresentation ^ <Fragment> = (
+	^label: subject localFileName
+)
+directoryPresentation ^ <Fragment> = (
+	^heading: filePresentation
+	details: [column: directoryContentsPresenters]
+)
+public definition ^ <Fragment> = (
+^subject isDirectory
+		ifTrue: [directoryPresentation]
+		ifFalse: [filePresentation]
+)
+) : (
+)
+) : (
+)

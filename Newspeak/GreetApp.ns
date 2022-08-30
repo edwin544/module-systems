@@ -1,0 +1,15 @@
+Newspeak3
+'Root'
+class GreetApp packageUsing: manifest = (
+	|
+    private GreetUI = manifest GreetUI.
+	|
+) (
+public main: platform args: args = (
+     | 
+     ui = GreetUI usingPlatform: platform.
+     |
+     platform hopscotch HopscotchWindow openSubject: (ui GreetSubject onModel: nil).
+)
+) : (
+)

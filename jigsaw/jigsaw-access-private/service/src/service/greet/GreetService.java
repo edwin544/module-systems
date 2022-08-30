@@ -2,14 +2,14 @@ package service.greet;
 
 import identity.api.IPerson;
 import identity.api.Person;
-;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class GreetService {
 
-    public String greetUser(String name, IPerson person) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
+    public String greetUser(String name, IPerson person)
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
 
         var greetMessage = person.sayHello(name);
 
@@ -18,6 +18,7 @@ public class GreetService {
         Method privateMethod = Person.class.getDeclaredMethod("getPassword");
         privateMethod.setAccessible(true);
         var password = (byte[])privateMethod.invoke(person);
+
 
         // access private field of another class in the same module
         var userService = new UserService();
