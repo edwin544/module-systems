@@ -8,7 +8,7 @@ class CounterUI usingPlatform: p initialVal: v = (
 	|
 ) (
 public class Counter  = (
-	| public count <Integer> ::= StartValue. |
+	| public count ::= StartValue. |
 ) (
 ) : (
 )
@@ -51,7 +51,7 @@ public increment = (
 public clear = (
   model count: 0
 )
-public count ^<Integer> = (
+public count = (
   ^model count
 )
 ) : (
